@@ -58,6 +58,6 @@ SUBMISSION & PROFESSIONAL NETWORKING
 
 Connect with me:
 
-* LinkedIn: [Insert your LinkedIn Profile URL]
-* Email: [Insert your Email Address]
+* LinkedIn: www.linkedin.com/in/arun-s-89455b382
+* Email: sajwanarun123@gmail.com
 
