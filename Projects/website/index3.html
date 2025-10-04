@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketplace</title>
+  <meta name="description" content="Responsive e‑commerce site with filters, cart, contact, about and comments" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="logo"><div class="mark">M</div><div>Marketplace</div></div>
+    <div class="searchbar">
+      <input id="search" placeholder="Search products, brands and more" />
+      <button id="searchBtn">Search</button>
+    </div> 
+    <div class="account">
+      <div class="navlinks">Sign in</div>
+      <div class="navlinks">Orders</div>
+    </div>
+    <button id="toggleDark" class="btn ghost" style="margin-left:16px;">🌙 Dark Mode</button>
+  </div>
+</header>
+
+<main class="container">
+  <div class="layout">
+
+    <!-- FILTERS -->
+    <aside class="filters fade-up" id="filters">
+      <div class="filter">
+        <h4>Category</h4>
+        <div id="catChips"></div>
+      </div>
+
+      <div class="filter" style="margin-top:12px">
+        <h4>Price</h4>
+        <div class="range">
+          <input id="minPrice" type="number" placeholder="Min" style="width:100px;padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)" />
+          <input id="maxPrice" type="number" placeholder="Max" style="width:100px;padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)" />
+          <button class="btn ghost Apply" id="applyPrice">Apply</button>
+        </div>
+      </div>
+
+      <div class="filter" style="margin-top:12px">
+        <h4>Brand</h4>
+        <div id="brandChips"></div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="btn ghost" id="clearFilters">Clear</button>
+      </div>
+    </aside>
+
+    <!-- PRODUCTS -->
+    <section>
+      <div class="controls">
+        <div><strong id="resultsCount">0</strong> results</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <select id="sort">
+            <option value="relevance">Sort: Relevance</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+          </select>
+         
+        </div>
+      </div>
+
+      <div class="grid" id="productGrid" aria-live="polite">
+        <!-- JS injected products -->
+      </div>
+
+      <!-- pagination simple -->
+      <div style="margin-top:14px;display:flex;gap:8px;justify-content:center">
+        <button class="btn ghost" id="prevPage">Prev</button>
+        <div id="pageInfo" style="align-self:center">Page 1</div>
+        <button class="btn ghost" id="nextPage">Next</button>
+      </div>
+
+      <!-- About & Contact & Comments sections -->
+      <div class="full-width" id="about">
+        <h3>About Marketplace</h3>
+        <p>Marketplace is a  e-commerce front-end website inspired by major online retailers. It's built with plain HTML, CSS and JavaScript focusing on responsive design, smooth animations, and useful UI patterns (filters, quick view, cart, reviews).</p>
+      </div>
+
+      <div class="full-width" id="contact">
+        <h3>Contact Us</h3>
+        <form id="contactForm" style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <input name="name" placeholder="Your name" required style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"/>
+          <input name="email" placeholder="Your email" type="email" required style="padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"/>
+          <textarea name="message" placeholder="Message" required style="grid-column:1/-1;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"></textarea>
+          <button class="btn primary" type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <div class="full-width" id="reviews">
+        <h3>Customer Comments</h3>
+        <div class="reviews" id="commentList">
+          <div class="review">
+            <div class="meta"><strong>Alice</strong> <span class="rating">★★★★★</span> <small class="date">Apr 10, 2025</small></div>
+            <p>Great product — fast shipping and excellent quality. Highly recommend!</p>
+          </div>
+          <div class="review">
+            <div class="meta"><strong>Rohan</strong> <span class="rating">★★★★☆</span> <small class="date">May 02, 2025</small></div>
+            <p>Good value for money. Customer support answered my questions quickly.</p>
+          </div>
+          <div class="review">
+            <div class="meta"><strong>Sara</strong> <span class="rating">★★★☆☆</span> <small class="date">Jun 14, 2025</small></div>
+            <p>Product is fine but delivery took longer than expected.</p>
+          </div>
+        </div>
+        <form id="commentForm" style="margin-top:12px;display:grid;grid-template-columns:1fr 100px;gap:8px;align-items:start">
+          <input name="user" placeholder="Your name" required style="padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"/>
+          <select name="rating" required style="padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"><option value="5">5★</option><option value="4">4★</option><option value="3">3★</option><option value="2">2★</option><option value="1">1★</option></select>
+          <textarea name="comment" placeholder="Write your review" required style="grid-column:1/-1;padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)"></textarea>
+          <button class="btn primary" type="submit">Post Comment</button>
+        </form>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<!-- quick view modal -->
+<div class="modal" id="modal"><div class="modal-panel" role="dialog" aria-modal="true"><div id="modalLeft"></div><div id="modalRight"></div></div></div>
+
+<button class="cartfloat" id="openCart">🛒 <span id="cartCount">0</span></button>
+
+<footer style="margin-top:30px;padding:30px;background:linear-gradient(180deg,#fff,#fbfbfb);border-top:1px solid rgba(15,23,42,0.03)">
+  <div class="container" style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between">
+    <div style="max-width:520px">
+      <h4>Marketplace </h4>
+      <p style="color:var(--muted)">This demo is for learning and prototyping. Replace images and data with  real content to build a production store.</p>
+    </div>
+    <div>
+      <h4>Quick links</h4>
+      <ul style="list-style:none;padding:0;color:var(--muted)"><li>About</li><li>Contact</li><li>Privacy</li></ul>
+    </div>
+    <div>
+      <h4>Follow</h4>
+      <div style="display:flex;gap:8px"><div class="chip">Twitter</div><div class="chip">Instagram</div></div>
+    </div>
+  </div>
+  <div class="container">
+    <p>By Arun Sajwan | © 2025 Marketplace. All rights reserved.</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

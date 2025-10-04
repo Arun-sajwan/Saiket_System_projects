@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- 😤📝🧾 -->
+      <h1>📚To-Do List</h1>
+    <div class="input-group">
+      <input type="text" id="task-input" placeholder="Enter a new task..." />
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="task-list"></ul>
+    <footer class="footer">
+    <p>By Arun Sajwan | © 2025 To-Do List App</p>
+    </footer>
+  </div>
+<!-- Edit Modal -->
+<div id="edit-modal" class="modal">
+  <div class="modal-content">
+    <h3>Edit Task</h3>
+    <label for="edit-input">Task Name:</label>
+    <input type="text" id="edit-input" />
+    <div class="modal-buttons">
+      <button id="save-btn">Save</button>
+      <button id="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

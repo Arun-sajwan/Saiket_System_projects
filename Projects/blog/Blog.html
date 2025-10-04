@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Power of Morning Routines</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: white;
+      margin: 0;
+      padding: 0;
+    }
+    main {
+      max-width: 80%;
+      margin: 40px auto;
+      background:linear-gradient(to left,rgb(255, 248, 155),rgb(238, 240, 238));
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 1rem;
+    }
+    header {
+      margin-bottom: 30px; 
+    }
+    header h1 {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    .meta {
+      font-size: 0.9em;
+      color: #353434;
+      display: flex;
+      justify-content: center;
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    figure {
+      margin: 20px 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    figure figcaption {
+      font-size: 0.85em;
+      color: #353333;
+      margin-top: 5px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    a.read-more {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007BFF;
+      padding: 10px 16px;
+      border-radius: 4px;
+    }
+    a.read-more:hover {
+      background-color: #07158f;
+    }
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.85em;
+      color: #383434;
+    }
+    li{
+        padding:5px;
+    }
+    h1{
+        border-bottom: 2px solid black;
+    }
+    #intro{
+      font-size: 30px;
+    }
+  body.dark-mode {
+    background: linear-gradient(to right, #232526, #414345);
+    color: #f1f1f1;
+  }
+  body.dark-mode main {
+    background: linear-gradient(to left, #222, #444);
+    color: #f1f1f1;
+  }
+  body.dark-mode header h1,
+  body.dark-mode h2,
+  body.dark-mode h1 {
+    color: #ffe082;
+    border-bottom: 2px solid #ffe082;
+  }
+  body.dark-mode .meta,
+  body.dark-mode figure figcaption,
+  body.dark-mode footer {
+    color: #bdbdbd;
+  }
+  body.dark-mode a.read-more {
+    background-color: #333;
+    color: #ffe082;
+  }
+  body.dark-mode a.read-more:hover {
+    background-color: #555;
+  }
+  img:hover{
+    transform: scale(1.05);
+    transition: transform 0.6s ease;
+    cursor: pointer;
+  }
+  #toggle-dark{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:1000;
+    padding:10px 18px;
+    border-radius:6px;
+    border:none;
+    background:#fcfafa;
+    font-size:1em;
+    cursor:pointer;
+  }
+  body.dark-mode button#toggle-dark{
+    background: #0c0c0c;
+    color:wheat
+    
+  }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <header>
+        <h1>The Power of Morning Routines</h1>
+        <p class="meta">By <strong>Arun Sajwan</strong> | Published on September 6, 2025</p>
+            <button id="toggle-dark" class="dark-mode-toggle" onclick="toggleDarkMode()">Dark 🌙
+            </button>
+      </header>
+
+      <section>
+        <figure>
+          <img src="5-Morning-Habits-for-Success.jpg" alt="practicing a morning routine">
+          <figcaption>Healthy morning habits</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2 id="intro">Introduction</h2>
+      <p class="padding">Starting your day with purpose can dramatically improve productivity and overall well-being. In this post, we explore how crafting a morning routine can transform your life.</p>
+      </section>
+
+      <section>
+        <h2 id="main-content">Benefits of Morning Routines</h2>
+        <p>
+          Here are a few reasons why morning routines are beneficial:
+        </p>
+        <ul>
+                <li><b>Increased Productivity:</b> Starting your day with a routine helps you focus and accomplish more.</li>
+                <li><b>Better Mental Health:</b> Activities like meditation or journaling can reduce stress and anxiety.</li>
+                <li><b>Consistent Energy Levels:</b> Healthy habits such as exercise and hydration boost your energy for the day.</li>
+                <li><b>Improved Discipline:</b> Following a routine builds self-discipline and positive habits.</li>
+                <li><b>Clearer Goals:</b> Setting intentions in the morning helps you prioritize and stay organized.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 id="main-content">Healthy morning habits</h2>
+      <p>Here are five essential components to consider when creating a morning routine:</p>
+      <ul>
+        <li>Wake up early and consistently</li>
+        <li>Drink a glass of water</li>
+        <li>Engage in some form of movement or exercise</li>
+        <li>Practice mindfulness or meditation</li>
+        <li>Set goals for the day</li>
+      </ul>
+      </section>
+
+      <section aria-labelledby="conclusion">
+        <h2 id="conclusion">Conclusion</h2>
+        <p>
+      <p>Whether you're a night owl or an early bird, a thoughtful morning routine can ground your day and give you clarity. Start small, and adjust as you go.</p>
+        </p>
+
+        <a href="#" class="read-more">Read More</a>
+      </section>
+
+    </article>
+    <footer>
+      &copy; 2025 Arun Sajwan. All rights reserved.
+    </footer>
+  </main>
+  <script>
+    // Toggle dark mode on button click
+    document.getElementById('toggle-dark').onclick = function() {
+      document.getElementById('toggle-dark').textContent = 
+        document.body.classList.contains('dark-mode') ? 'Dark 🌙' : 'Light ☀️' ;
+      document.body.classList.toggle('dark-mode');
+    };
+    
+  </script>
+</body>
+</html>
