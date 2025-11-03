@@ -47,15 +47,6 @@ The following projects were completed during the internship:
 
 ---
 
-SUBMISSION & PROFESSIONAL NETWORKING
-
-*  A professional video showcasing these projects and achievements was created and hosted on LinkedIn .
-* SaiKet Systems was tagged, and specific hashtags were included to maximize visibility and engagement :
-    * #saiketsystems
-    * #saiket
-    * #saiketsys
-    * (Your Internship Domain Hashtag, e.g., #frontenddevelopment)
-
 Connect with me:
 
 * LinkedIn: www.linkedin.com/in/arun-s-89455b382
